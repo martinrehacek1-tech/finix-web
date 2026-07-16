@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* 
+      1. 'auto' vypne natívne vyhladzovanie, ktoré koliduje s JS animáciami. 
+      2. 'scroll-behavior' sa používa len pre natívne skoky, tvoj fyzikálny engine 
+         v komponente si pohyb riadi sám cez requestAnimationFrame.
+    */
+    scroll-behavior: auto;
+    
+    /* 
+      Zabezpečí, že web nebude "brzdiť" ani "odrážať" pri dojazde na okraj stránky 
+      na mobilných zariadeniach.
+    */
+    overscroll-behavior: none;
+  }
+
+  body {
+    /* Stabilizuje vykresľovanie fontov a zabraňuje "brneniu" pri animáciách */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+}
