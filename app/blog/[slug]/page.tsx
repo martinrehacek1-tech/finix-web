@@ -7,6 +7,8 @@ import SiteHeader from "@/components/SiteHeader";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import SiteFooter from "@/components/SiteFooter";
+import Link from "next/link";
+
 
 export const revalidate = 60;
 
@@ -90,15 +92,18 @@ const portableTextComponents: PortableTextComponents = {
 
       return (
         <figure className="my-10">
-          <img
-            src={urlFor(value)
-              .width(1400)
-              .fit("max")
-              .auto("format")
-              .url()}
-            alt={value.alt || ""}
-            className="h-auto w-full rounded-2xl"
-          />
+          <Image
+  src={urlFor(value)
+    .width(1400)
+    .fit("max")
+    .auto("format")
+    .url()}
+  alt={value.alt || ""}
+  width={1400}
+  height={848}
+  sizes="(max-width: 768px) 100vw, 768px"
+  className="h-auto w-full rounded-2xl"
+/>
 
           {value.caption && (
             <figcaption className="mt-3 text-center text-sm text-slate-500">
@@ -203,8 +208,10 @@ export default async function BlogPostPage({
     : null;
 
   return (
+  <>
+    <SiteHeader />
     <main className="min-h-screen bg-white">
-      <SiteHeader />
+      
 
       <article className="mx-auto max-w-5xl px-6 py-12 md:py-16">
         {/* Hlavička článku */}

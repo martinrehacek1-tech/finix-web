@@ -24,7 +24,7 @@ export default async function HomePage() {
     <main>
       <SiteHeader />
 
-      <section className="relative mx-auto grid max-w-5xl items-start gap-8 overflow-hidden px-6 py-14 md:grid-cols-2">
+      <section className="relative mx-auto grid max-w-6xl items-start gap-8 overflow-hidden px-6 py-14 md:grid-cols-2">
         {/* Mobilné pozadie */}
         <div
           aria-hidden="true"
@@ -32,7 +32,7 @@ export default async function HomePage() {
           style={{
             backgroundImage: "url('/logo_main.png')",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "center 100%",
+            backgroundPosition: "center 200%",
             backgroundSize: "150% auto",
             WebkitMaskImage:
               "linear-gradient(180deg, black 0%, black 35%, transparent 80%)",
@@ -49,12 +49,12 @@ export default async function HomePage() {
           style={{
             backgroundImage: "url('/logo_main.png')",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "120% center",
-            backgroundSize: "auto 250%",
+            backgroundPosition: "100% center",
+            backgroundSize: "auto 280%",
             WebkitMaskImage:
-              "linear-gradient(100deg, transparent 0%, transparent 35%, black 75%, black 100%)",
+              "linear-gradient(100deg, transparent 0%, transparent 40%, black 75%, black 100%)",
             maskImage:
-              "linear-gradient(100deg, transparent 0%, transparent 35%, black 75%, black 100%)",
+              "linear-gradient(100deg, transparent 0%, transparent 40%, black 75%, black 100%)",
             opacity: 0.16,
           }}
         />
@@ -65,9 +65,8 @@ export default async function HomePage() {
         </div>
 
         {/* Obsah hero */}
+        {/* Obsah hero - text (ľavý stĺpec) */}
         <div className="relative z-10 pt-20 md:pt-0">
-          
-
           <h1 className="mb-0.5 font-serif text-4xl leading-tight text-brand-navy">
             {settings?.heroHeadline || "Vaše financie v jasných číslach."}
           </h1>
@@ -76,21 +75,26 @@ export default async function HomePage() {
             {settings?.heroSubtext ||
               "Hypotéky, poistenie a investície bez skrytých háčikov. Tam, kde iný končí, my začíname."}
           </p>
+        </div>
 
-          <div className="flex items-center">
+        {/* CTA - pravý stĺpec, pritlačené k spodnému okraju hero sekcie */}
+        <div className="relative z-10 md:self-end md:justify-self-end">
+          <div className="inline-flex flex-col gap-3 rounded-2xl border border-slate-100 bg-white/70 px-5 py-4 shadow-sm backdrop-blur-sm sm:flex-row sm:items-center sm:gap-5">
+            <p className="text-sm font-medium text-slate-700">
+              Máte záujem o bezplatnú konzultáciu?
+            </p>
             <Link
               href="/kontakt"
-              className="rounded-md bg-brand-blue px-5 py-2.5 text-sm text-white"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-brand-blue px-5 py-2.5 text-sm font-medium text-white transition hover:bg-brand-blue/90"
             >
               Dohodnúť stretnutie
             </Link>
-</div>
-
           </div>
+        </div>
       </section>
 
       <section className="relative z-20 border-y border-slate-100 bg-white px-4 py-7 shadow-[0_-4px_12px_rgba(15,23,42,0.02),0_10px_26px_rgba(15,23,42,0.07)] sm:px-6">
-        <div className="mx-auto grid max-w-5xl grid-cols-2 items-start gap-x-4 gap-y-6 text-center sm:grid-cols-3 md:grid-cols-5 md:gap-4">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 items-start gap-x-4 gap-y-6 text-center sm:grid-cols-3 md:grid-cols-5 md:gap-4">
           <div className="col-span-1 md:border-r md:border-slate-100">
             <p className="font-serif text-xl font-medium tracking-tight text-brand-navy sm:text-2xl">
               {settings?.statClients ?? "1 339"}
@@ -140,7 +144,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-     <section id="sluzby" className="px-6 py-12 max-w-5xl mx-auto">
+     <section id="sluzby" className="px-6 py-12 max-w-6xl mx-auto">
   <h2 className="font-serif text-lg text-brand-navy mb-4 text-center">
     Vyberte si oblasť, ktorá vás zaujíma
   </h2>
@@ -173,17 +177,17 @@ export default async function HomePage() {
   </div>
 </section>
 
-      <section className="px-6 py-12 max-w-5xl mx-auto">
+      <section className="px-6 py-12 max-w-6xl mx-auto">
         <h2 className="font-serif text-lg text-brand-navy mb-1 text-center">Naši odborníci</h2>
         <TeamCarousel members={team} />
       </section>
 
-      <section className="px-6 py-12 max-w-5xl mx-auto">
+      <section className="px-6 py-12 max-w-6xl mx-auto">
   <TestimonialSlider testimonials={testimonials} />
 </section>
 
 
-<section className="mx-auto max-w-5xl px-6 py-14">
+<section className="mx-auto max-w-6xl px-6 py-14">
   <div className="mb-6 flex items-center justify-between gap-4">
     <h2 className="font-serif text-2xl text-brand-navy">
       Mohlo by vás zaujímať

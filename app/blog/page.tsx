@@ -2,6 +2,7 @@ import { client, urlFor } from "@/lib/sanity";
 import SiteHeader from "@/components/SiteHeader";
 import Image from "next/image";
 import Link from "next/link";
+import SiteFooter from "@/components/SiteFooter";
 
 export const revalidate = 60;
 
@@ -39,11 +40,11 @@ type Post = {
 export default async function BlogIndexPage({
   searchParams,
 }: {
-  searchParams: Promise<{
+  searchParams?: {
     kategoria?: string;
-  }>;
+  };
 }) {
-  const { kategoria } = await searchParams;
+  const kategoria = searchParams?.kategoria;
 
   const categoriesQuery = `
     *[_type == "category"] | order(title asc) {
@@ -106,8 +107,11 @@ export default async function BlogIndexPage({
   
 
   return (
+
+    <>
+    <SiteHeader />
     <main>
-      <SiteHeader />
+      
 
       <section className="mx-auto max-w-5xl px-6 py-14">
         {/* Nadpis a kategórie */}
@@ -251,5 +255,8 @@ export default async function BlogIndexPage({
         )}
       </section>
     </main>
+
+    <SiteFooter />
+  </>
   );
 }

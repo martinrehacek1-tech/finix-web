@@ -180,8 +180,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const calculator = NAJPOISTENIE_CALCULATORS[slug];
 
   return (
+  <>
+    <SiteHeader />
+
     <main>
-      <SiteHeader />
 
 
      <section className="border-b border-slate-100 bg-slate-50/70">

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../finix-crm"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "finix-ulohy"
+	}
+}

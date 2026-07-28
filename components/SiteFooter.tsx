@@ -32,6 +32,7 @@ const companyLinks = [
   { href: "/o-nas", label: "O nás" },
   { href: "/#tim", label: "Naši odborníci" },
   { href: "/blog", label: "Články" },
+  { href: "https://www.finixreal.sk", label: "Reality", external: true },
   { href: "/kontakt", label: "Kontakt" },
 ];
 
@@ -62,15 +63,17 @@ export default async function SiteFooter() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           {/* FINIX */}
           <div>
-            <Link href="/" className="inline-flex">
-              <Image
-                src="/logo_text.png"
-                alt="FINIX"
-                width={140}
-                height={42}
-                className="h-8 w-auto"
-              />
-            </Link>
+           
+  <div className="rounded-2xl border border-white/10 bg-white/8 px-5 py-3 shadow-lg backdrop-blur-xl transition duration-300 hover:bg-white/12">
+    <Image
+      src="/logo_text.png"
+      alt="FINIX"
+      width={150}
+      height={150}
+      className="h-9 w-auto"
+    />
+  </div>
+
 
             <p className="mt-4 max-w-sm text-sm leading-6 text-slate-300">
               Pomáhame klientom robiť lepšie finančné rozhodnutia. Hypotéky,
