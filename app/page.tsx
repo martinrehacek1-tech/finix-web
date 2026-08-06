@@ -7,11 +7,18 @@ import Image from "next/image";
 import SiteHeader from "@/components/SiteHeader";
 import FloatingAdvisorBadge from "@/components/FloatingAdvisorBadge";
 import SiteFooter from "@/components/SiteFooter";
+import HomeExperience from "@/components/home/HomeExperience";
+import { cookies } from "next/headers";
 
 
 export const revalidate = 60;
 
 export default async function HomePage() {
+  const cookieStore = await cookies();
+  const hasReferral = Boolean(
+    cookieStore.get("finix_advisor_slug")?.value,
+  );
+
   const [settings, team, services, posts, testimonials] = await Promise.all([
     client.fetch(queries.siteSettings),
     client.fetch(queries.teamMembers),
@@ -21,7 +28,8 @@ export default async function HomePage() {
   ]);
 
   return (
-    <main>
+    <HomeExperience hasReferral={hasReferral}>
+      <main>
       <SiteHeader />
 
       <section className="relative mx-auto grid max-w-6xl items-start gap-8 overflow-hidden px-6 py-14 md:grid-cols-2">
@@ -245,7 +253,8 @@ export default async function HomePage() {
   </div>
 </section>      
 
-     <SiteFooter />
-    </main>
+        <SiteFooter />
+      </main>
+    </HomeExperience>
   );
 }

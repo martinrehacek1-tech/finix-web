@@ -66,7 +66,7 @@ export default async function SiteFooter() {
            
   <div className="rounded-2xl border border-white/10 bg-white/8 px-5 py-3 shadow-lg backdrop-blur-xl transition duration-300 hover:bg-white/12">
     <Image
-      src="/logo_text.png"
+      src="/finix-logo-sidebar-all-white.png"
       alt="FINIX"
       width={150}
       height={150}
