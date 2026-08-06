@@ -9,7 +9,7 @@ import {
   useFrame,
 } from "@react-three/fiber";
 import {
-  ContactShadows,
+  
   Environment,
 } from "@react-three/drei";
 import {
@@ -162,7 +162,9 @@ export default function FinixLogoScene({
     <div className="absolute inset-0">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(30,180,220,0.16),transparent_52%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_16%,rgba(0,4,12,0.85)_100%)]" />
-
+      <div className="pointer-events-none absolute inset-x-[24%] bottom-[7%] h-[12%] rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(20,145,205,0.16)_0%,rgba(8,70,120,0.06)_42%,transparent_76%)] blur-3xl" />
+      
+      
       <Canvas
         camera={CAMERA_SETTINGS}
         dpr={[1, 1.5]}
@@ -227,21 +229,7 @@ export default function FinixLogoScene({
             timelineProgress={timelineProgress}
           />
 
-          <ContactShadows
-            position={[0, -1.32, 0]}
-            opacity={
-              0.08 *
-              (1 -
-                MathUtils.smoothstep(
-                  timelineProgress,
-                  0.4,
-                  0.78,
-                ))
-            }
-            scale={8}
-            blur={7}
-            far={6}
-          />
+          
 
           <FinixPostProcessing />
         </Suspense>
