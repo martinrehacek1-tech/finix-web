@@ -221,8 +221,8 @@ export default function FinixLogoScene({
 
         <Suspense fallback={null}>
           <Environment
-            preset="city"
-            environmentIntensity={0.88}
+            files="/hdr/potsdamer_platz_1k.hdr"
+  environmentIntensity={0.88}
           />
 
           <FinixLogoModel
